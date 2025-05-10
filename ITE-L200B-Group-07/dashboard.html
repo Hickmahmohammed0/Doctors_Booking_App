@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/dashboard.css">
+    <link rel="icon" href="Multimedia/doc copy.png" type="image/png">
+</head>
+<body class="default-theme">
+  
+    <header>
+        <nav>
+            <ul>
+                <div class="color-selector">
+                    <i class='bx bx-color-fill' id="colorIcon" tabindex="0" 
+                       onclick="document.querySelector('.color-list').classList.toggle('show')" 
+                       onkeydown="if(event.key === 'Enter') document.querySelector('.color-list').classList.toggle('show')"></i>
+                    
+                    <ul class="color-list" id="colorList">
+                        <li tabindex="0">
+                            <a href="#" onclick="setTheme('pink')" onkeydown="if(event.key === 'Enter') setTheme('pink')">
+                                <div class="color" style="background-color: #FFC1C7;"></div>
+                                <span>Pink Theme</span>
+                            </a>
+                        </li>
+                        <li tabindex="0">
+                            <a href="#" onclick="setTheme('blue')" onkeydown="if(event.key === 'Enter') setTheme('blue')">
+                                <div class="color" style="background-color: #1D64DF;"></div>
+                                <span>Blue Theme</span>
+                            </a>
+                        </li>
+                        <li tabindex="0">
+                            <a href="#" onclick="setTheme('black')" onkeydown="if(event.key === 'Enter') setTheme('black')">
+                                <div class="color" style="background-color: #000; border-color: #555;"></div>
+                                <span>Black Theme</span>
+                            </a>
+                        </li>
+                        <li tabindex="0">
+                            <a href="#" onclick="setTheme('default')" onkeydown="if(event.key === 'Enter') setTheme('default')">
+                                <div class="color" style="background-color: #fff; border-color: #555;"></div>
+                                <span>Default Theme</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="notification-icon-container">
+                    <div class="notification-icon" id="notificationBell">
+                        <i class='bx bxs-bell-ring'></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="notification-panel" id="notificationPanel">
+                        <div class="notification-header">
+                            <h3>Notifications</h3>
+                            <span class="notification-count">3</span>
+                            <button class="mark-all-read">Mark all as read</button>
+                        </div>
+                        <div class="notification-list">
+                            <div class="notification-item unread">
+                                <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\doc copy.png"class="profile-pic" alt="Dr. Smith">
+                                <div class="notification-content">
+                                    <p class="notification-title">Dr. Alice Ren</p>
+                                    <p class="notification-message">Your appointment has been confirmed for tomorrow at 2:00 PM</p>
+                                    <p class="notification-time">10 minutes ago</p>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="notification-dismiss">×</button>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\doc copy.png" class="profile-pic" alt="Pharmacy">
+                                <div class="notification-content">
+                                    <p class="notification-title">Central Pharmacy</p>
+                                    <p class="notification-message">Your prescription is ready for pickup</p>
+                                    <p class="notification-time">2 hours ago</p>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="notification-dismiss">×</button>
+                                </div>
+                            </div>
+                            <div class="notification-item unread">
+                                <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\doc copy.png"class="profile-pic" alt="Health Reminder">
+                                <div class="notification-content">
+                                    <p class="notification-title">Health Reminder</p>
+                                    <p class="notification-message">Don't forget to take your medication at noon</p>
+                                    <p class="notification-time">5 hours ago</p>
+                                </div>
+                                <div class="notification-actions">
+                                    <button class="notification-dismiss">×</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="notification-footer">
+                            <a href="#" class="view-all">View all notifications</a>
+                        </div>
+                    </div>
+                </div>
+                <i class='bx bx-menu' id="menuIcon" tabindex="0"></i>
+                <ul class="menu-list" id="menuList">
+                    <li tabindex="0"><a href="#"id="homeLink">Home</a></li>
+                    <li tabindex="0"><a href="index.html#about">About</a></li>
+                    <li tabindex="0"><a href="doctorslist.html">Doctors</a></li>
+                    <li tabindex="0"><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </ul>
+        </nav>
+        <div class="profile-container">
+            <img id="headerImage" src="https://i.pinimg.com/474x/bf/9b/55/bf9b55886bea87335e60b7a1d62380f7.jpg" alt="Profile Picture">
+            <div class="profile-name" id="headerName"></div>
+            <div class="edit">
+                <button class="editProfile" onclick="editProfile()">Edit Profile</button>
+                <div class="passLog">
+                    <button class="circle" tabindex="0">&bull;&bull;&bull;</button>
+                    <ul class="passLog-list" id="passLogList">
+                      <li tabindex="0"><a href="#" id="logoutBtn">Logout</a></li>
+                      <li tabindex="0"><a href="#" id="changePassBtn">Change Password</a></li>
+                  </ul>
+                  
+                  <!-- Change Password Modal -->
+<div id="changePasswordModal" class="modal">
+  <div class="modal-content">
+    <span class="change-pass-close">&times;</span>
+    <h2>Change Password</h2>
+    <form id="changePassForm">
+      <div class="form-group">
+        <label for="currentPass">Current Password</label>
+        <input type="password" id="currentPass" required>
+      </div>
+      <div class="form-group">
+        <label for="newPass">New Password</label>
+        <input type="password" id="newPass" minlength="8" required>
+      </div>
+      <div class="form-group">
+        <label for="confirmPass">Confirm New Password</label>
+        <input type="password" id="confirmPass" minlength="8" required>
+      </div>
+      <button type="submit" class="submit-btn">Update Password</button>
+    </form>
+  </div>
+</div>
+                </div>
+                <div class="extraLog">
+                    <a href="#"><br>LIMITED ACCOUNT</a>
+                    <div class="privy">
+                        <p style="margin: 5px;margin-top: 15px;">
+                            Your account is only visible to logged in users and cannot be followed or discovered in public feeds
+                            <a href=""> Learn more</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="edit-container">
+            <form action="" method="post" class="edit-profile" id="editProfile">
+                <li onclick="editProfileClose()" class="editForm-close" style="position: absolute; top: 8px; right: 10px; cursor: pointer; list-style: none;" tabindex="0">
+                    <i class='bx bx-x' style="color: #FF748E; font-size: 30px;"></i>
+                </li>
+                <img id="profileImage" src="https://i.pinimg.com/474x/bf/9b/55/bf9b55886bea87335e60b7a1d62380f7.jpg" alt="Profile">
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                <button id="uploadBtn" onclick="document.getElementById('fileInput').click();">Update Image</button><br>
+                <label for="Name">Name</label><br>
+                <input type="text" placeholder="Song Yuqi" id="name"><br>
+                <label for="Email">Email</label><br>
+                <input type="email" name="email" id="Email-inp" placeholder="guxumeing@gmail.com"><br>
+                <label for="Contact">Contact</label><br>
+                <input type="tel" maxlength="10" placeholder="+233-000000000"><br>
+                <button type="submit" id="saveBtn">Save</button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-Dashboard">
+            <div class="dashboard">
+                <div class="dash-bx">
+                    <div class="welcomeMessage">
+                        <p>Welcome back, ! Here's your health overview.</p>
+                        <div class="welcomeHeart">💙</div>
+                        <div class="welcomeHeart">💙</div>
+                    </div>
+                    <div class="calendar">
+                        <div class="flower">🌸</div>
+                        <div class="header">
+                            <div class="nav-buttons">
+                                <button onclick="changeMonth(-1)">‹</button>
+                            </div>
+                            <h2 id="monthYear"></h2>
+                            <div class="nav-buttons">
+                                <button onclick="changeMonth(1)">›</button>
+                            </div>
+                        </div>
+                        <div class="days" id="dayNames">
+                            <div class="day-name">Sun</div>
+                            <div class="day-name">Mon</div>
+                            <div class="day-name">Tue</div>
+                            <div class="day-name">Wed</div>
+                            <div class="day-name">Thu</div>
+                            <div class="day-name">Fri</div>
+                            <div class="day-name">Sat</div>
+                        </div>
+                        <div class="days" id="calendarDays"></div>
+                    </div>
+                    <section class="lifestyle-wellness">
+                        <h2>Lifestyle and Wellness</h2>
+                        <div class="wellness-grid">
+                            <div class="wellness-box">
+                                <i class='bx bx-run'></i>
+                                <h3>Exercise Level</h3>
+                                <p>Moderate activity (3-4x/week)</p>
+                            </div>
+                            <div class="wellness-box">
+                                <i class='bx bx-bowl-hot'></i>
+                                <h3>Diet Notes</h3>
+                                <p>Balanced diet with fruits, veggies & lean protein</p>
+                            </div>
+                            <div class="wellness-box">
+                                <i class='bx bx-no-smoking'></i>
+                                <h3>Smoking/Drinking</h3>
+                                <p>Non-smoker, occasional drinker</p>
+                            </div>
+                            <div class="wellness-box">
+                                <i class='bx bx-brain'></i>
+                                <h3>Mental Health</h3>
+                                <p>Low stress, sleeping 7-8 hrs daily</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="dash-bx">
+                    <div class="health-overview">
+                        <h2>Health Overview</h2>
+                        <div class="overview-boxes">
+                            <div class="overview-box">
+                                <h3>Blood Pressure</h3>
+                                <p>120/80 mmHg</p>
+                            </div>
+                            <div class="overview-box">
+                                <h3>Heart Rate</h3>
+                                <p>72 bpm</p>
+                            </div>
+                            <div class="overview-box">
+                                <h3>Next Appointment</h3>
+                                <p>April 15, 2025<br>Dr. Alice — Cardiologist</p>
+                            </div>
+                            <div class="overview-box">
+                                <h3>Medication</h3>
+                                <p>Amoxicillin 250mg<br>2x Daily</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="chartContainer">
+                        <canvas id="myDoughnutChart"></canvas>
+                    </div>
+                    <section id="contact">
+                      <div class="container">
+                       
+                        
+                        <div class="form-container">
+                          <h2 class="heading">Feedback & Rating</h2>
+                          
+                          <form class="form" id="contactForm">
+                            <div class="input-group">
+                              <input id="name" type="text" name="name" placeholder="Name..." required>
+                            </div>
+                            
+                            <div class="input-group">
+                              <input id="email" type="email" name="email" placeholder="joe@gmail.com" required>
+                            </div>
+                            
+
+<div class="rating-container">
+  <div class="rating-label">How would you rate our service?</div>
+  <div class="star-rating" id="starRating">
+    <i class='bx bx-star star' data-rating="1"></i>
+    <i class="bx bx-star star" data-rating="2"></i>
+    <i class="bx bx-star star" data-rating="3"></i>
+    <i class="bx bx-star star" data-rating="4"></i>
+    <i class="bx bx-star star" data-rating="5"></i>
+  </div>
+  <div class="rating-value" id="ratingValue">Not rated yet</div>
+  <input type="hidden" id="rating-input" name="rating" value="0">
+</div>
+
+                            <div class="input-group">
+                              <textarea id="message" name="message" placeholder="Send Feedback" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit">Send Feedback</button>
+                          </form>
+                        </div>
+                        <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\undraw_feedback_tmp7.svg" alt="Messages Illustration" class="illustration">
+                      </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+        <section class="appointment-section">
+            <div class="appointment">
+                <div class="menuh2">
+                    <h2>Upcoming Appointments</h2>
+                    <i class='bx bx-dots-vertical-rounded' id="appointIcon" tabindex="0"></i>
+                    <ul class="appoint-list" id="appointList">
+                        <li class="appoint-close" style="position: absolute; top: 8px; right: 10px; cursor: pointer;" tabindex="0">
+                            <i class='bx bx-x' style="color: #2f80ed; font-size: 20px;"></i>
+                        </li>
+                        <li tabindex="0"><a href="#" onclick="showForm()">Book Appointments</a></li>
+                        <hr style="width: 200px; color: #2f80ed;">
+                        <li tabindex="0"><a href="#">Reschedule Appointments</a></li>
+                    </ul>
+                </div>
+                <div class="appointment-card">
+                    <div class="details">
+                        <p><b>Doctor's Name:</b> Dr. Elizabeth Smith – Gynecologist <br>
+                           <b>Date & Time:</b> Monday, April 8, 2025 at 10:30 AM <br>
+                           <b>Location:</b> France, Tous Lous, Central Women's Health Center</p>
+                        <button class="cancel">Cancel</button>
+                    </div>
+                </div>
+                <div class="appointment-card">
+                    <div class="details">
+                        <p><b>Doctor's Name:</b> Dr. Michael Lee – Cardiologist <br>
+                           <b>Date & Time:</b> Tuesday, April 9, 2025 at 2:00 PM <br>
+                           <b>Location:</b> France, Tous Lous, Central Heart Clinic</p>
+                        <button class="cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="bookingModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2 >Book an Appointment</h2>
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="doctorName">Doctor</label>
+                            <input type="text" id="doctorName" name="doctorName" readonly>
+                          </div>
+                          
+                          <div class="form-group">
+                            <label for="doctorField">Field</label>
+                            <input type="text" id="doctorField" name="doctorField" readonly>
+                          </div>
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Required</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="consultation">Consultation</option>
+                                <option value="treatment">Treatment</option>
+                                <option value="checkup">Check-up</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Preferred Time</label>
+                            <select id="time" name="time" required>
+                                <option value="">Select a time slot</option>
+                                <option value="09:00">09:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">01:00 PM</option>
+                                <option value="14:00">02:00 PM</option>
+                                <option value="15:00">03:00 PM</option>
+                                <option value="16:00">04:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Additional Notes</label>
+                            <textarea id="notes" name="notes" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" >Book Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="prescribe">
+            <h2>View Your Prescription</h2>
+            <div class="card-wrapper">
+                <span class="card-arrow" onclick="prevCard()"><i class='bx bx-chevron-left'></i></span>
+                <div class="card-container" id="card-container"></div>
+                <span class="card-arrow" onclick="nextCard()"><i class='bx bx-chevron-right'></i></span>
+            </div>
+        </section>
+
+        <section class="recent-">
+            <h2>Recent Appointments</h2>
+            <table class="appointments-table">
+                <thead>
+                    <tr>
+                        <th>Profile</th>
+                        <th>Doctor's Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://i.pravatar.cc/100?img=12" alt="Doctor" class="profile-img"></td>
+                        <td>Dr. Sarah James</td>
+                        <td>April 14, 2025</td>
+                        <td>10:30 AM</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://i.pravatar.cc/100?img=22" alt="Doctor" class="profile-img"></td>
+                        <td>Dr. Michael Lee</td>
+                        <td>April 15, 2025</td>
+                        <td>01:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://i.pravatar.cc/100?img=35" alt="Doctor" class="profile-img"></td>
+                        <td>Dr. Anita Kumar</td>
+                        <td>April 16, 2025</td>
+                        <td>08:45 AM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy;2025 DOC's POINT All rights reserved.</p>
+    </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      emailjs.init('PUBLIC KEY HERE'); // Initialize with your public key
+    </script>
+     
+    <script src="JS/dashboard.js"></script>
+</body>
+</html>

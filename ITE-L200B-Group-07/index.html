@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+<!-- Linking Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<link rel="stylesheet" href="https://pinterest.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="CSS/home.css">
+<link rel="icon" href="Multimedia/doc copy.png" type="image/png">
+
+</head>
+ 
+<body>
+
+<!--screen loader -->
+<div class="loading-container" id="loadingScreen">
+  <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\undraw_load-more_yy5n.svg" style="width: 300px; height: 250px;"  class="loading-illustration" alt="lading illustration">
+  <h2>DOC's POINT</h2>
+  <div class="loading" id="loadingText">
+      Loading...
+  </div>
+</div>
+
+<!-- Create Account Section (will vanish after creation) -->
+<div class="create-account" id="createAccount">
+  <div class="video-container">
+      <video autoplay muted loop>
+          <source src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\144029-784164361_small.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+      </video>
+  </div>
+  
+  <div class="login-container">
+      <h2 style="text-align: center;">Create Account</h2>
+      <form id="signupForm">
+          <label for="fullName">FULL NAME</label><br>
+          <input type="text" id="fullName" name="name" placeholder="Your full name" required><br>
+          <label for="userName">USERNAME</label><br>
+          <input type="text" id="userName" name="user" placeholder="username" required><br>
+      
+          <label for="emailAddress">EMAIL ADDRESS</label><br>
+          <input type="email" id="emailAddress" name="email" placeholder="youremailaddress@gmail.com" required><br>
+          <label for="passLog">PASSWORD</label><br>
+          <input type="password" id="passLog" name="passlog" minlength="8" placeholder="********" required><br>
+          <label for="confirmPass">CONFIRM PASSWORD</label><br>
+          <input type="password" id="confirmPass" name="confirmPassLog" required><br>
+          <label for="birthDate">DATE OF BIRTH</label><br>
+          <input type="date" id="birthDate" name="birth-date" required><br>
+          <p><input type="checkbox" id="agreement" name="agreement" required> I agree to the terms and conditions</p>
+          <br>
+          <button type="submit" id="createAccountBtn">CREATE ACCOUNT</button>
+      </form>
+  </div>
+</div>
+
+<!-- Login Section (hidden by default) -->
+<div class="hidden" id="login">
+  <h2>LOGIN</h2>
+  <form id="loginForm" class="login-form">
+      <label for="loginUser">USERNAME</label><br>
+      <input type="text" id="loginUser" name="user" placeholder="username" required><br>
+      <label for="loginPass">PASSWORD</label><br>
+      <input type="password" id="loginPass" name="passlog"  placeholder="********" required><br>
+      <button type="submit">LOGIN</button>
+  </form>
+</div>
+
+  <div class="homepage hidden" id="homepage">
+
+
+    <header class="welcomePage">
+      <nav class="navbar">
+        <div class="logo">
+            <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\doc copy.png"alt="DOC's POINT Logo">
+            <h3>DOC's POINT</h3>
+        </div>    
+        
+        <ul class="nav-menu">
+            <button id="menu-close-button" class="fas fa-times"></button>
+            <li><a href="index.html#homepage" class="nav-link">Home</a></li>
+            <li><a href="index.html#about" class="nav-link">About</a></li>
+            <li><a href="doctorslist.html" class="nav-link">Doctors</a></li>
+            <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            <li><button class="mobile-login-btn" id="navLog" >Login</button></li>
+        </ul>
+        
+        <button id="navLoginBtn">Login</button>
+        <button id="menu-open-button" class="fas fa-bars"></button>
+    </nav>
+
+
+
+    <section class="welcome-section">
+      <div class="circle-accent circle-1"></div>
+      <div class="circle-accent circle-2"></div>
+      
+      <div class="welcome-container">
+          <div class="welcome-content">
+              <h1 class="welcome-title">Welcome to <span>DOC's POINT</span></h1>
+              <div class="welcome-message">
+                  <p>Your trusted platform to easily book doctor appointments and manage your health needs.</p>
+                  <p>At DOC's POINT, we aim to connect you with top doctors and provide a seamless experience for managing your healthcare needs. Whether you're looking for a routine check-up or specialized treatment, we make it easy to find the right doctor and schedule appointments that fit your busy life.</p>
+              </div>
+              <div class="welcome-cta">
+                  <a href="#" class="cta-btn cta-primary">Find a Doctor</a>
+                  <a href="#" class="cta-btn cta-secondary">Learn More</a>
+              </div>
+          </div>
+          
+          <div class="welcome-visual">
+              <img 
+                  src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\undraw_doctor_aum1.svg" 
+                  alt="Doctor illustration" 
+                  class="doctor-illustration">
+          </div>
+      </div>
+  </section>
+        
+    </header>
+
+    <section class="searchPeu" id="search">
+      <div class="searchPeu-container">
+          <div class="search-header">
+              <h2>Discover Your Ideal Doctor!</h2>
+              <p>Supported By: World Health Organization</p>
+
+              <div class="search-filter">
+                <div class="search-container">
+                    <i class='bx bx-search-alt-2'></i>
+                    <input type="text" id="fieldSearch" placeholder="Search for a medical field...">
+                </div>
+            </div>
+          </div>
+          
+          
+          
+          <div class="Fields">
+              <ul class="title">
+                  <li>Medical Fields</li>
+                  <li id="resultCount">All Fields</li>
+              </ul>
+              <div class="allFields" id="medicalFields">
+                  <h3>Primary Care</h3>
+                  <li>Family Medicine</li>
+                  <li>Pediatrics</li>
+                  <li>Internal Medicine</li>
+                  <li>Geriatrics</li>
+                  
+                  <h3>Surgical Specialties</h3>
+                  <li>General Surgery</li>
+                  <li>Orthopedic Surgery</li>
+                  <li>Neurosurgery</li>
+                  <li>Cardiothoracic Surgery</li>
+                  <li>Plastic Surgery</li>
+                  
+                  <h3>Medical Specialties</h3>
+                  <li>Cardiology</li>
+                  <li>Dermatology</li>
+                  <li>Endocrinology</li>
+                  <li>Gastroenterology</li>
+                  <li>Hematology</li>
+                  <li>Infectious Disease</li>
+                  <li>Nephrology</li>
+                  <li>Neurology</li>
+                  <li>Oncology</li>
+                  <li>Pulmonology</li>
+                  <li>Rheumatology</li>
+                  
+                  <h3>Other Specialties</h3>  
+                  <li>Obstetrics & Gynecology</li>
+                  <li>Ophthalmology</li>
+                  <li>Otolaryngology (ENT)</li>
+                  <li>Urology</li>
+                  <li>Anesthesiology</li>
+                  <li>Emergency Medicine</li>
+                  <li>Pathology</li>
+                  <li>Psychiatry</li>
+                  <li>Radiology</li>
+                  <li>Physical Medicine & Rehab</li>
+              </div>
+          </div>
+      </div>
+  </section>
+      
+
+<section class="about-section" id="about">
+    <h2 style="text-align: center; margin-bottom: 40px;">ABOUT DOC’s POINT</h2>
+    <div class="about">
+    <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\Sweet Doctors with Patient _ Premium AI-generated image.jpg" width="95%" height="500px" alt="">
+<div class="aboutBox">
+    <p style="color: #000;">
+       <b style="font-size: 40px;"> W</b>elcome to DOC’s POINT, your trusted platform for managing all your healthcare needs with ease and convenience. We aim to provide a seamless experience, from booking doctor appointments to keeping track of your health journey.
+       At DOC’s POINT, we understand how important it is to have access to reliable medical care. That's why we've designed our platform to help you find the best doctors, book appointments quickly, and manage your healthcare in a secure, user-friendly environment.
+    </p>
+    <p>Features & Benefits:</p>
+    <ul>
+
+        <li>Easy Online Booking: Scheduling an appointment has never been easier. With just a few clicks, you can book an appointment with a doctor that fits your needs and schedule.</li>
+    <li>Doctor Search & Reviews: Browse through detailed doctor profiles, read real patient reviews, and find the best healthcare professional for you. Whether you’re looking for a general practitioner or a specialist, we make it simple to make informed decisions.</li>
+    <li>Secure and Confidential: Your privacy matters to us. All user data is protected with the highest security standards, ensuring that your personal information stays safe.</li>
+    <li>Appointment Reminders: Never miss an appointment again! Our automatic reminders will notify you ahead of time, ensuring you’re always on track with your healthcare schedule.</li>
+    </ul>
+</div>
+</div>
+</section>
+   <section class="testimonialSection">
+<h2 style="text-align: center;margin-bottom: 40px;">TESTIMONIALS</h2>
+    <div class="Testimonials">
+        <div class=" img-bx" >
+            <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\Primary Aid Home Health_ Your Ally in Navigating Healthcare Challenges.jpg" width="440px" height="440px" alt="tesImg">
+            
+            <h4> What Our Users Say:</h4>
+        <p>
+            We’re proud to have helped so many people take control of their health journey. Here’s what some of our users have to say about their experience with DOC’s POINT:
+        </p>
+        </div>
+
+        <div class="testimonials-section" id="testimonials">
+            <div class="slider-container swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="https://i.pinimg.com/474x/70/a2/36/70a236f90d2803f9da32d0558be75ba1.jpg" alt="User" class="user-image" />
+                  <h3 class="name">Sarah Johnson</h3>
+                  <i class="feedback">“Booking an appointment was fast and simple. The doctor was incredibly kind and professional!”</i>
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://i.pinimg.com/474x/ec/f2/fe/ecf2feb9bbd41ff1875da5a05e5d17ec.jpg" alt="User" class="user-image" />
+                  <h3 class="name">James Wilson</h3>
+                  <i class="feedback">“ DOC’s POINT completely changed the way I manage my healthcare. I can book my appointments with ease and have peace of mind knowing I won’t miss any important visits!”</i>
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://i.pinimg.com/474x/e8/0a/22/e80a22544de41b6e937c55a8ab4b6405.jpg" alt="User" class="user-image" />
+                  <h3 class="name">Michael Brown</h3>
+                  <i class="feedback">“Great experience with DOC’s POINT. Highly friendly staff, clean environment, and excellent care.”</i>
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://i.pinimg.com/474x/b6/5e/ed/b65eed9bc16a890d4105fe285dbd81b1.jpg" alt="User" class="user-image" />
+                  <h3 class="name">Emily Harris</h3>
+                  <i class="feedback">“Quick booking, no long wait times, and compassionate service. I’ll definitely come back.”</i>
+                </div>
+                <div class="swiper-slide">
+                  <img src="https://i.pinimg.com/474x/52/46/49/524649971a55b2f3a0dae1d537c61098.jpg" alt="User" class="user-image" />
+                  <h3 class="name">Anthony Thompson</h3>
+                  <i class="feedback">“No phone calls or paperwork required, everything was done online easily.”</i>
+                </div>
+              </div>
+          
+              <!-- Pagination and Navigation -->
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </div>
+   </section>
+   <section class="health-tips">
+    <h2>Health & Wellness Tips</h2>
+    <div class="tips-carousel">
+      <div class="tip-card">
+        <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\Grow & Heal The Power of Medicinal Plants.jpeg" alt="food">
+        <div class="tip-content">
+          <h3>Daily Exercise Benefits</h3>
+          <p>30 minutes of moderate exercise can improve cardiovascular health by 40%</p>
+          <a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" 
+          class="read-more" 
+          target="_blank" 
+          rel="noopener noreferrer">
+          WHO Recommendations →
+       </a>
+        </div>
+      </div>
+      
+      <div class="tip-card">
+        <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\ Grow & Heal The Power of Medicinal Plants.jpeg"alt="Healthy food">
+        <div class="tip-content">
+          <h3>Nutrition Guide</h3>
+          <p>Discover the perfect balanced diet for your age and activity level</p>
+          <a href="https://www.hsph.harvard.edu/nutritionsource/healthy-eating-plate" 
+          class="read-more" 
+          target="_blank" 
+          rel="noopener noreferrer">
+          Harvard Nutrition Guide →
+       </a>
+        </div>
+      </div>
+      
+     
+      <div class="tip-card">
+        <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352" alt="Healthy food for diabetes">
+        <div class="tip-content">
+            <h3>Diabetes Management</h3>
+            <p>Learn about blood sugar control and healthy lifestyle choices for better diabetes management.</p>
+            <a href="https://www.mayoclinic.org/diseases-conditions/diabetes/in-depth/diabetes-management/art-20047963" 
+               class="read-more" 
+               target="_blank"
+               rel="noopener noreferrer">
+               MayorClinic.org →
+            </a>
+        </div>
+    </div>
+    <div class="tip-card">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b" alt="Heart healthy exercise">
+        <div class="tip-content">
+            <h3>Heart Health</h3>
+            <p>Discover exercises and dietary tips to maintain optimal cardiovascular health.</p>
+            <a href="https://www.heart.org/en/healthy-living/fitness" 
+               class="read-more" 
+               target="_blank"
+               rel="noopener noreferrer">
+               heart.org →
+            </a>
+        </div>
+    </div>
+    <div class="tip-card">
+        <img src="https://images.unsplash.com/photo-1491897554428-130a60dd4757" alt="Mental health awareness">
+        <div class="tip-content">
+            <h3>Mental Wellness</h3>
+            <p>Essential techniques for stress management and emotional wellbeing.</p>
+            <a href="https://www.nimh.nih.gov/health/topics/caring-for-your-mental-health" 
+               class="read-more" 
+               target="_blank"
+               rel="noopener noreferrer">
+               Read More→
+            </a>
+        </div>
+    </div>
+    </div>
+  </section>
+   <footer>
+    <h2>DOC's POINT</h2>
+   <div class="quickLinks">
+       <h3>Quick Links</h3>
+       <ul>
+           <li><a href="#">Home</a></li>
+           <li><a href="#">About</a></li>
+           <li><a href="#">Doctors</a></li>
+           <li><a href="#">Dashboard</a></li>
+       </ul>
+       <p>&copy;2025 DOC’s POINT All rights reserved.</p>
+   </div>
+   <div class="donate">
+    <h3>Contact to Donate</h3>
+    <ul>
+        <li><a href="#">Phone: +233 55 000 0000</a></li>
+        <li><a href="#">Email: 0z7uM@example.com</a></li>
+    </ul>
+   </div>
+   <div class="support">
+    <h3>Support By:</h3>
+    <div class="support-img">
+        <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\ProdAfrica Business Directory - Ministry of Health - Accra - Ghana ProdAfrica Business Directory Connecting Business.jpg" alt="" width="40px" height="40px" >
+        <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\WHO (World Health Organization) logo vector free download.jpg" width="40px" height="40px" alt="">
+       <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\Red Cross Heart Social Club (1).jpg" width="40px" height="40px" alt="">
+    </div>
+        
+
+    
+   </div>
+   </footer>
+      
+   
+   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+<script src="JS/home.js"></script>
+</div>
+</body>  
+</html>

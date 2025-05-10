@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctors Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/doctorslist.css">
+  <link rel="icon" href="Multimedia/doc copy.png" type="image/png">
+</head>
+<body>
+    
+       
+          <nav>
+            <div class="search-wrapper">
+                <div class="search-container">
+                    <i class='bx bx-search-alt-2'></i>
+                    <input type="text" name="search" id="searchInput" placeholder="Search for a doctor...">
+                    
+                  </div>
+                  <i style="font-size: 50px; cursor: pointer;" class='bx bx-menu' id="menuIcon" tabindex="0"></i>
+                  <ul class="menu-list" id="menuList">
+                    <li tabindex="0"><a href="index.html"id="homeLink">Home</a></li>
+                    <li tabindex="0"><a href="index.html#about">About</a></li>
+                    <li tabindex="0"><a href="doctorslist.html">Doctors</a></li>
+                    <li tabindex="0"><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-wrapper">
+              <i class='bx bx-chevron-left arrows' id="scrollLeft"></i>
+              <ul class="nav-list" id="navList">
+                <!-- javascript will add list items here -->
+              </ul>
+              <i class='bx bx-chevron-right arrows' id="scrollRight"></i>
+            </div>
+          </nav>
+          
+          <main>
+            <div id="results">Start typing or select a category...</div>
+          </main>
+          <section class="specialty-section" id="sepecialitySection">
+            <!-- Quote with arrows -->
+            <div class="quote-wrapper">
+              <span class="quote-arrow" onclick="prevQuote()"><i class='bx bx-chevron-left'></i></span>
+              <p id="quoteText" class="quote-text">
+                "The greatest wealth is health." <br><span>- Virgil</span>
+              </p>
+              <span class="quote-arrow" onclick="nextQuote()"><i class='bx bx-chevron-right'></i></span>
+            </div>
+          
+          </section>
+          
+<h2 class="specialty-heading" id="specialtyHeading">Gynecologist</h2>
+<div style="margin-right: 30px;">
+    <div class="right-section">
+        <div class="message-with-images">
+          <!-- Overlapping images at top right -->
+          <div class="overlapping-images">
+            <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\Asian Nurse Pictures _ Freepik.jpg" alt="Doc 1" />
+            <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\Young Afro Professional Doctor, Doctor, Afro, Medical PNG Transparent Image and Clipart for Free Download.jpg"alt="Doc 2" />
+            <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\Download premium image of Male indian doctor confident smiling person_ by Minty about person, man, doctor's, portrait, and adult 15386689.jpg"alt="Doc 3" />
+          </div>
+          <!-- Message text -->
+          <p class="right-message" id="rightMessage">
+            "Take charge of your well-being today. Book an appointment with a trusted gynecologist for expert care in every stage of womanhood because your health deserves attention."
+          </p>
+        </div>
+      </div>
+</div>
+             
+             
+          
+          <section class="doctors-grid">
+<div class="grid2">
+            <div class="doc-box" id="boxA">
+
+<div class="card">
+    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+    <div class="details">
+      <h3>Dr. Yun Meisheng</h3>
+      <p class="doctor-field">Gynecologist</p>
+      <p>City Hospital</p>
+      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+    </div>
+    <button class="book-btn">Book Now</button>
+  </div>
+  <div class="card">
+    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+    <div class="details">
+      <h3>Dr. Yun Meisheng</h3>
+      <p class="doctor-field">Gynecologist</p>
+      <p>City Hospital</p>
+      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+    </div>
+    <button class="book-btn">Book Now</button>
+  </div>
+  <div class="card">
+    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+    <div class="details">
+      <h3>Dr. Yun Meisheng</h3>
+      <p class="doctor-field">Gynecologist</p>
+      <p>City Hospital</p>
+      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+    </div>
+    <button class="book-btn">Book Now</button>
+  </div>
+  <div class="card">
+    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+    <div class="details">
+      <h3>Dr. Yun Meisheng</h3>
+      <p class="doctor-field">Gynecologist</p>
+      <p>City Hospital</p>
+      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+    </div>
+    <button class="book-btn">Book Now</button>
+  </div>
+  <div class="card">
+    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+    <div class="details">
+      <h3>Dr. Yun Meisheng</h3>
+      <p class="doctor-field">Gynecologist</p>
+      <p>City Hospital</p>
+      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+    </div>
+    <button class="book-btn">Book Now</button>
+  </div>
+  <div class="card">
+    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+    <div class="details">
+      <h3>Dr. Yun Meisheng</h3>
+      <p class="doctor-field">Gynecologist</p>
+      <p>City Hospital</p>
+      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+    </div>
+    <button class="book-btn">Book Now</button>
+  </div>
+  <div class="card">
+    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+    <div class="details">
+      <h3>Dr. Yun Meisheng</h3>
+      <p class="doctor-field">Gynecologist</p>
+      <p>City Hospital</p>
+      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+    </div>
+    <button class="book-btn">Book Now</button>
+  </div>
+  <div class="card">
+    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+    <div class="details">
+      <h3>Dr. Yun Meisheng</h3>
+      <p class="doctor-field">Gynecologist</p>
+      <p>City Hospital</p>
+      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+    </div>
+    <button class="book-btn">Book Now</button>
+  </div>
+  <div class="card">
+    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+    <div class="details">
+      <h3>Dr. Yun Meisheng</h3>
+      <p class="doctor-field">Gynecologist</p>
+      <p>City Hospital</p>
+      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+    </div>
+    <button class="book-btn">Book Now</button>
+  </div>
+  <div class="card">
+    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+    <div class="details">
+      <h3>Dr. Yun Meisheng</h3>
+      <p class="doctor-field">Gynecologist</p>
+      <p>City Hospital</p>
+      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+    </div>
+    <button class="book-btn">Book Now</button>
+  </div>
+            </div>
+            <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\11_29.jpg" class="image-extra" style="margin-top: 15px;border-radius: 10px;" width="80%" height="430px" alt="">
+        </div>
+            <div class="doc-box" id="boxB" style="width: 95%; height: 1000px; margin-top: 10%;">
+                <div class="card">
+                    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+                    <div class="details">
+                      <h3>Dr. Yun Meisheng</h3>
+                      <p class="doctor-field">Gynecologist</p>
+                      <p>City Hospital</p>
+                      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+                      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+                    </div>
+                    <button class="book-btn">Book Now</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+                    <div class="details">
+                      <h3>Dr. Yun Meisheng</h3>
+                      <p class="doctor-field">Gynecologist</p>
+                      <p>City Hospital</p>
+                      <div class="rating">★★★☆☆</div>
+                      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+                    </div>
+                    <button class="book-btn">Book Now</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+                    <div class="details">
+                      <h3>Dr. Yun Meisheng</h3>
+                      <p class="doctor-field">Gynecologist</p>
+                      <p>City Hospital</p>
+                      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i>☆</div>
+                      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+                    </div>
+                    <button class="book-btn">Book Now</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://i.pinimg.com/474x/1b/bc/d4/1bbcd4bc95c3c3221b11b06995b146b7.jpg" alt="Doctor" class="doctor-img">
+                    <div class="details">
+                      <h3>Dr. Yun Meisheng</h3>
+                      <p class="doctor-field">Gynecologist</p>
+                      <p>City Hospital</p>
+                      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+                      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+                    </div>
+                    <button class="book-btn">Book Now</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+                    <div class="details">
+                      <h3>Dr. Yun Meisheng</h3>
+                      <p class="doctor-field">Gynecologist</p>
+                      <p>City Hospital</p>
+                      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+                      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+                    </div>
+                    <button class="book-btn">Book Now</button>
+                  </div>
+                <div class="card">
+                    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+                    <div class="details">
+                      <h3>Dr. Yun Meisheng</h3>
+                      <p class="doctor-field">Gynecologist</p>
+                      <p>City Hospital</p>
+                      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+                      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+                    </div>
+                    <button class="book-btn">Book Now</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+                    <div class="details">
+                      <h3>Dr. Yun Meisheng</h3>
+                      <p class="doctor-field">Gynecologist</p>
+                      <p>City Hospital</p>
+                      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+                      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+                    </div>
+                    <button class="book-btn">Book Now</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+                    <div class="details">
+                      <h3>Dr. Yun Meisheng</h3>
+                      <p class="doctor-field">Gynecologist</p>
+                      <p>City Hospital</p>
+                      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+                      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+                    </div>
+                    <button class="book-btn">Book Now</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+                    <div class="details">
+                      <h3>Dr. Yun Meisheng</h3>
+                      <p class="doctor-field">Gynecologist</p>
+                      <p>City Hospital</p>
+                      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+                      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+                    </div>
+                    <button class="book-btn">Book Now</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+                    <div class="details">
+                      <h3>Dr. Yun Meisheng</h3>
+                      <p class="doctor-field">Gynecologist</p>
+                      <p>City Hospital</p>
+                      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+                      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+                    </div>
+                    <button class="book-btn">Book Now</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+                    <div class="details">
+                      <h3>Dr. Yun Meisheng</h3>
+                      <p class="doctor-field">Gynecologist</p>
+                      <p>City Hospital</p>
+                      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+                      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+                    </div>
+                    <button class="book-btn">Book Now</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+                    <div class="details">
+                      <h3>Dr. Yun Meisheng</h3>
+                      <p class="doctor-field">Gynecologist</p>
+                      <p>City Hospital</p>
+                      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+                      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+                    </div>
+                    <button class="book-btn">Book Now</button>
+                  </div>
+                  <div class="card">
+                    <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\Young Afro Professional Doctor, Doctor, Afro, Medical PNG Transparent Image and Clipart for Free Download.jpg" alt="Doctor" class="doctor-img">
+                    <div class="details">
+                      <h3>Dr. Yun Meisheng</h3>
+                      <p class="doctor-field">Gynecologist</p>
+                      <p>City Hospital</p>
+                      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+                      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+                    </div>
+                    <button class="book-btn">Book Now</button>
+                  </div>
+                  <div class="card">
+                    <img src="https://i.pravatar.cc/100?img=47" alt="Doctor" class="doctor-img">
+                    <div class="details">
+                      <h3>Dr. Yun Meisheng</h3>
+                      <p class="doctor-field">Gynecologist</p>
+                      <p>City Hospital</p>
+                      <div class="rating"><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i><i class='bx bx-star'></i></div>
+                      <div class="availability"><p style="margin-top: 10px;">Available<span class="dot"></span></p> </div>
+                    </div>
+                    <button class="book-btn">Book Now</button>
+                  </div>
+            </div>
+           
+          </section>
+          <div class="card-grid">
+            <div class="card-wrapper">
+                <span class="card-arrow" onclick="prevCard()"><i class='bx bx-chevron-left'></i>
+                </span>
+                <div class="card-container" id="card-container">
+                  <!-- JS will inject 2 cards here -->
+                </div>
+                <span class="card-arrow" onclick="nextCard()"><i class='bx bx-chevron-right'></i>
+                </span>
+              </div>
+              
+           
+              
+      
+          </div>
+          <div id="bookingModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Book an Appointment</h2>
+              <form id="bookingForm">
+                <div class="form-group">
+                  <label for="doctorName">Doctor</label>
+                  <input type="text" id="doctorName" name="doctorName" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="doctorField">Field</label>
+                  <input type="text" id="doctorField" name="doctorField" readonly>
+                </div>
+                <div class="form-group">
+                  <label for="fullName">Full Name</label>
+                  <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                  <label for="service">Service Required</label>
+                  <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option value="consultation">Consultation</option>
+                    <option value="treatment">Treatment</option>
+                    <option value="checkup">Check-up</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="date">Preferred Date</label>
+                  <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                  <label for="time">Preferred Time</label>
+                  <select id="time" name="time" required>
+                    <option value="">Select a time slot</option>
+                    <option value="09:00">09:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="12:00">12:00 PM</option>
+                    <option value="13:00">01:00 PM</option>
+                    <option value="14:00">02:00 PM</option>
+                    <option value="15:00">03:00 PM</option>
+                    <option value="16:00">04:00 PM</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="notes">Additional Notes</label>
+                  <textarea id="notes" name="notes" rows="4"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Book Appointment</button>
+              </form>
+            </div>
+          </div>
+          
+          <footer>
+            
+            <div class="donate">
+                <h3 style="font-size: 20px;">Contact to Donate</h3><br>
+                <ul>
+                    <li><a href="#">Phone: +233 55 000 0000</a></li><br>
+                    <li><a href="#">Email: 0z7uM@example.com</a></li>
+                </ul>
+               </div>
+               
+               <p>&copy;2025 DOC’s POINT All rights reserved.</p>
+           
+           
+           <div class="support">
+            <h3 style="font-size: 20px; ">Support By:</h3><br>
+            <div class="support-img">
+                <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\ProdAfrica Business Directory - Ministry of Health - Accra - Ghana ProdAfrica Business Directory Connecting Business.jpg" alt="" width="40px" height="40px" >
+                <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\WHO (World Health Organization) logo vector free download.jpg" width="40px" height="40px" alt="">
+               <img src="C:\Users\hp\Desktop\ITE-L200B-Group-07\Multimedia\Red Cross Heart Social Club (1).jpg" width="40px" height="40px" alt="">
+            </div>
+                
+        
+            
+           </div>
+           </footer>
+              
+           <script src="JS/fields.js"></script>
+  <script src="JS/doctorslist.js"></script>
+</body>
+</html>
